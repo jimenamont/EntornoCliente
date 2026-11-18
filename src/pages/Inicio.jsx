@@ -3,7 +3,7 @@ export default function Inicio() {
   return (
     <>
       <section aria-labelledby="saludo">
-        <h1 id="saludo">Hola Festival</h1>
+        <h1 id="saludo">Hola Festival - Jimena</h1>
         <p className="introduccion">
           Todo festival empieza con un primer escenario. El nuestro es esta
           página: una aplicación de React que iremos construyendo paso a paso.
