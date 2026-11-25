@@ -46,8 +46,11 @@ export function sumarPrecios(precios) {
 export function duracion(inicio, fin) {
   inicio = Number(inicio);
   fin = Number(fin);
+  if(0 <= inicio < fin <= 1440){
+    return fin - inicio;
+  }
   // TODO: resta inicio a fin.
-  return undefined;
+  return "Parametros no validos";
 }
 
 // 2. Devuelve un booleano: ambos enteros y 0 <= inicio < fin <= 1440.
@@ -56,7 +59,10 @@ export function horarioValido(inicio, fin) {
   inicio = Number(inicio);
   fin = Number(fin);
   // TODO: combina Number.isInteger y comparaciones con &&.
-  return undefined;
+  if(Number.isInteger(fin) && Number.isInteger(inicio) && inicio < fin){
+    return true;
+  }
+  return false;
 }
 
 // 3. Recibe un array de géneros y el texto buscado. Cuenta coincidencias exactas.
@@ -64,7 +70,12 @@ export function horarioValido(inicio, fin) {
 // contarPorGenero([], 'indie') → 0. Debe funcionar con cualquier longitud.
 export function contarPorGenero(generos, buscado) {
   // TODO: empieza un contador en 0, recorre generos con for y compara cada valor.
-  return undefined;
+  let contador= 0;
+  for (let i = 0; i < generos.length; i++) {
+    if(generos[i]=== buscado)
+        contador++;
+  }
+  return contador;
 }
 
 // 4. Recibe un array de duraciones no negativas, en minutos, como textos.
@@ -73,7 +84,11 @@ export function contarPorGenero(generos, buscado) {
 export function minutosTotales(duraciones) {
   // TODO: empieza un acumulador en 0 y recorre duraciones con for.
   // Convierte cada valor con Number(duraciones[i]) antes de sumarlo.
-  return undefined;
+  let acumulador = 0;
+  for (let i = 0; i < duraciones.length; i++) {
+    acumulador += Number(duraciones[i]);
+  }
+  return acumulador;
 }
 
 // 5. Dos textos: nombre de artista y consulta.
@@ -81,21 +96,33 @@ export function minutosTotales(duraciones) {
 // coincideTexto('Bruma Solar', ' BRUMA ') → true.
 export function coincideTexto(artista, texto) {
   // TODO: usa trim(), toLowerCase() e includes(). Devuelve un booleano.
-  return undefined;
+  let busqueda= texto.trim().toLowerCase();
+  return artista.toLowerCase().includes(busqueda);
 }
 
 // 6. Dos códigos de escenario. Devuelve un booleano.
 // coincideEscenario('rio', 'rio') → true; ('rio', 'bosque') → false.
 export function coincideEscenario(escenario, buscado) {
   // TODO: compara los parámetros con igualdad estricta (===).
-  return undefined;
+  if(escenario=== buscado){
+    return true;
+  }
+  return false;
 }
 
 // 7. Convertir minutos a hora.
 // Convierte minutos enteros entre 0 y 1440 al formato HH:MM. Casos: 635 → 10:35; 0 → 00:00; 1440 → 24:00. Para valores inválidos devuelve 'Dato no válido'.
 export function hora(minutos) {
   // TODO: Usa Number, Number.isInteger, Math.floor, el resto (%) y padStart.
-  return undefined;
+  duracion=Number(minutos);
+  if(Number.isInteger(duracion) && duracion>=0 && duracion <= 1440){
+    horas= Math.floor(duracion/60);
+    min= duracion % 60;
+    minMostrados= Sting(min).padStart(2,"0");
+    duracionMonstrada= horas + ":"+minMostrados;
+    return duracionMonstrada;
+  }
+  return 0;
 }
 
 // 8. Aplicar un descuento.

@@ -8,11 +8,11 @@ import App from './App.jsx';
 import './index.css';
 
 // Buscamos el contenedor declarado en index.html y creamos una raíz de React.
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')); // esto siempre es igual
 
 // render muestra App dentro del contenedor. Las etiquetas con mayúscula
 // representan componentes de React; las minúsculas representan elementos HTML.
-root.render(
+root.render( //siempre igual
   <StrictMode>
     <App />
   </StrictMode>,
