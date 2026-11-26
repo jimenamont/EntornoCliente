@@ -181,15 +181,15 @@ export function generosUnicos(generos) {
 // Devuelve un array nuevo de nombres que contienen la consulta, ignorando mayúsculas y espacios exteriores de esta. Conserva los nombres originales. Una consulta vacía devuelve todos; 'zzz' devuelve [].
 export function buscarArtistas(artistas, texto) {
   // TODO: Usa filter con una función con nombre, toLowerCase e includes. No uses flechas.
-  let nombre=[];
+  let nombres=[];
   let text= texto.trim().toLowerCase();
   for (let i = 0; i < artistas.length; i++) {
     let artista= artistas[i].toLowerCase();
     if (artista.includes(text)){
-      nombre.push(artistas[i]);
+      nombres.push(artistas[i]);
     }
   }
-  return nombre;
+  return nombres;
 }
 
 // 12. Convertir duraciones a horas.
@@ -198,17 +198,11 @@ export function duracionesEnHoras(duraciones) {
   // TODO: Usa map con una función con nombre. Convierte cada elemento con Number y divide por 60.
   // funcion con nombre que pasa a horas
 
-  /*let resultado = [];
+  let resultado = [];
     for (let i = 0; i < duraciones.length; i++) {
        resultado.push(Number(duraciones[i]) / 60);
     }
     return resultado;
-    */
-  function horas(duraciones){
-    return Number(duraciones)/60;
-  }
-
-  return duraciones.map(horas);//aplica la funcion a cada elemnto(sin parentesis para que no resultado)
 }
 
 // 13. Calcular una compra.
@@ -218,7 +212,6 @@ export function calcularCompra(precios, cantidades) {
   if(precios.length !== cantidades.length){
     return "Datos no válidos"
   }
-  /*
   let total=0;
   for (let i = 0; i < precios.length; i++) {
     let precioNum = Number(precios[i]);
@@ -226,8 +219,6 @@ export function calcularCompra(precios, cantidades) {
     total+=(precioNum*cantidadNum);
   }
   return Number(total.toFixed(2));
-   */
-
 }
 
 // 14. Detectar solapamientos.

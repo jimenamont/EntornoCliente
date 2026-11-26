@@ -4,7 +4,7 @@
  * Recibimos el evento cuando necesitamos saber qué control se ha utilizado.
  * currentTarget es el elemento que tiene conectado el manejador.
  */
-
+//Sin filter / finito / map / reduce
 // EJEMPLOS RESUELTOS
 
 // onClick: leemos el contador, lo convertimos a número y sumamos una visita.
